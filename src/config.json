@@ -1,0 +1,118 @@
+{
+  "name": "Prometheus",
+  "type": "executer",
+  "execProgram": "node",
+  "main": "app.js",
+  "version": "1.0.0",
+  "description":"Kaholo integration with Prometheus API",
+  "imgUrl": "logo.png",
+  "settings":[
+    {
+      "name":"url",
+      "viewName": "Prometheus Server URL",
+      "type":"string"
+    },
+    {
+      "name": "user",
+      "viewName": "Username",
+      "type": "string"
+    },
+    {
+      "name": "pass",
+      "viewName": "Password",
+      "type": "vault"
+    }
+  ],
+  "methods": [
+    {
+      "name": "getAlerts",
+      "viewName": "Get Alerts",
+      "params": [
+        {
+          "name":"url",
+          "viewName": "Prometheus Server URL",
+          "type":"string"
+        },
+        {
+          "name": "user",
+          "viewName": "Username",
+          "type": "string"
+        },
+        {
+          "name": "pass",
+          "viewName": "Password",
+          "type": "vault"
+        },
+        {
+          "name": "labels",
+          "viewName": "Labels",
+          "type": "text"
+        },
+        {
+          "name": "state",
+          "viewName": "State",
+          "type": "options",
+          "options": [
+            {
+              "id": "All",
+              "name": "All"
+            },
+            {
+              "id": "pending",
+              "name": "pending"
+            },
+            {
+              "id": "firing",
+              "name": "firing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "getRules",
+      "viewName": "Get Rules",
+      "params": [
+        {
+          "name":"url",
+          "viewName": "Prometheus Server URL",
+          "type":"string"
+        },
+        {
+          "name": "user",
+          "viewName": "Username",
+          "type": "string"
+        },
+        {
+          "name": "pass",
+          "viewName": "Password",
+          "type": "vault"
+        },
+        {
+          "name": "type",
+          "viewName": "Type",
+          "type": "options",
+          "options": [
+            {
+              "id": "All",
+              "name": "All"
+            },
+            {
+              "id": "alert",
+              "name": "alert"
+            },
+            {
+              "id": "record",
+              "name": "record"
+            }
+          ]
+        },
+        {
+          "name": "groupNamePat",
+          "viewName": "Group Name Pattern",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}
