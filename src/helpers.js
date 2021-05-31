@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 
 async function sendToPrometheus(action, settings, httpMethod, path, body){
-    let url = (action.  params.url || settings.url || "").trim();
+    let url = (action.params.url || settings.url || "").trim();
     const user = (action.params.user || settings.user || "").trim();
     const pass = action.params.pass || settings.pass;
 
@@ -15,7 +15,7 @@ async function sendToPrometheus(action, settings, httpMethod, path, body){
     if (user && pass){
         opts.headers.set('Authorization', 'Basic ' + Buffer.from(user + ":" + pass).toString('base64'));
     }
-    if (httpMethod === "POST" && body){
+    if (body){
         opts.body = JSON.stringify(body);
         opts.headers.set('Content-Type', 'application/json');
     }
