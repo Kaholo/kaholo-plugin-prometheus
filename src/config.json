@@ -3,14 +3,14 @@
   "type": "executer",
   "execProgram": "node",
   "main": "app.js",
-  "version": "1.0.1",
-  "description":"Kaholo integration with Prometheus API",
+  "version": "1.0.3",
+  "description": "Kaholo integration with Prometheus API",
   "imgUrl": "logo.png",
-  "settings":[
+  "settings": [
     {
-      "name":"url",
+      "name": "url",
       "viewName": "Prometheus Server URL",
-      "type":"string"
+      "type": "string"
     },
     {
       "name": "user",
@@ -29,9 +29,9 @@
       "viewName": "Get Alerts",
       "params": [
         {
-          "name":"url",
+          "name": "url",
           "viewName": "Prometheus Server URL",
-          "type":"string"
+          "type": "string"
         },
         {
           "name": "user",
@@ -74,9 +74,9 @@
       "viewName": "Get Rules",
       "params": [
         {
-          "name":"url",
+          "name": "url",
           "viewName": "Prometheus Server URL",
-          "type":"string"
+          "type": "string"
         },
         {
           "name": "user",
@@ -114,5 +114,6 @@
         }
       ]
     }
-  ]
+  ],
+  "category": "MONITORING"
 }
